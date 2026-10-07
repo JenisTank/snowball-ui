@@ -1,0 +1,58 @@
+{
+  "name": "@snowball/ui",
+  "version": "1.0.0",
+  "description": "Snowball neumorphic UI kit — runtime theme engine (Snowball Dark / Snowball Light / custom), token CSS, Tailwind preset, and React components. Extracted from CA.Snowball.",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./theme": {
+      "types": "./dist/lib/theme.d.ts",
+      "default": "./dist/lib/theme.js"
+    },
+    "./persist": {
+      "types": "./dist/lib/persist.d.ts",
+      "default": "./dist/lib/persist.js"
+    },
+    "./components": {
+      "types": "./dist/components/ui.d.ts",
+      "default": "./dist/components/ui.js"
+    },
+    "./FloatingTheme": {
+      "types": "./dist/components/FloatingTheme.d.ts",
+      "default": "./dist/components/FloatingTheme.js"
+    },
+    "./styles.css": "./src/styles/tokens.css",
+    "./tailwind-preset": "./src/tailwind/preset.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src/styles",
+    "src/tailwind"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check": "tsx scripts/theme-check.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build && npm run check"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "tailwindcss": ">=3.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
